@@ -22,6 +22,6 @@
     "standard": "^8.6.0"
   },
   "scripts": {
-    "build": "babel src -d lib"
+    "build": "babel src --source-maps -d lib"
   }
 }
