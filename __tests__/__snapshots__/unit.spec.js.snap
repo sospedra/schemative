@@ -121,6 +121,22 @@ Object {
 }
 `;
 
+exports[`Suite parsers should create the schema prop types 1`] = `
+Object {
+  "arr": undefined,
+  "dispatch": [Function],
+  "func": [Function],
+  "shape": Object {
+    "deep": Object {
+      "nested": [Function],
+    },
+    "id": [Function],
+    "object": [Function],
+  },
+  "value": [Function],
+}
+`;
+
 exports[`Suite parsers should select an strategy for recursivity 1`] = `Object {}`;
 
 exports[`Suite parsers should select an strategy for recursivity 2`] = `Object {}`;

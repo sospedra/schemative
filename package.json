@@ -26,6 +26,12 @@
       "/lib"
     ]
   },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  },
   "scripts": {
     "pretest": "npm run build",
     "test": "npm run test:cs && npm run test:unit",
