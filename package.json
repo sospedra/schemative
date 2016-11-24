@@ -1,0 +1,16 @@
+{
+  "name": "schemative",
+  "version": "0.0.1",
+  "description": "Declarative schemas with propTypes, default values and transformers",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/sospedra/schemative.git",
+    "type": "git"
+  },
+  "author": "sospedra <sospedra.r@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.2",
+    "react": "^15.4.1"
+  }
+}
