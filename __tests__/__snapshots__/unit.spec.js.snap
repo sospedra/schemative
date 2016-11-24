@@ -1,0 +1,97 @@
+exports[`Types suite should have exist all the defined types 1`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": Array [],
+}
+`;
+
+exports[`Types suite should have exist all the defined types 2`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": true,
+}
+`;
+
+exports[`Types suite should have exist all the defined types 3`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": undefined,
+}
+`;
+
+exports[`Types suite should have exist all the defined types 4`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": -1,
+}
+`;
+
+exports[`Types suite should have exist all the defined types 5`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": Object {},
+}
+`;
+
+exports[`Types suite should have exist all the defined types 6`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": "",
+}
+`;
+
+exports[`Types suite should have exist all the defined types 7`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": [Function],
+}
+`;
+
+exports[`Types suite should have exist all the defined types 8`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": true,
+}
+`;
+
+exports[`Types suite should have exist all the defined types 9`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": false,
+}
+`;
+
+exports[`Types suite should have exist all the defined types 10`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": false,
+}
+`;
+
+exports[`Types suite should have exist all the defined types 11`] = `
+Object {
+  "iterable": false,
+  "propTypes": [Function],
+  "value": false,
+}
+`;
+
+exports[`Types suite should have exist all the defined types 12`] = `[Function]`;
+
+exports[`Types suite should have exist all the defined types 13`] = `[Function]`;
+
+exports[`Types suite should have exist all the defined types 14`] = `[Function]`;
+
+exports[`Types suite should have exist all the defined types 15`] = `[Function]`;
+
+exports[`Types suite should have exist all the defined types 16`] = `[Function]`;

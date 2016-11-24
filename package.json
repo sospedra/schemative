@@ -21,7 +21,16 @@
     "standard": "^8.6.0",
     "uglify-js": "^2.7.4"
   },
+  "standard": {
+    "ignore": [
+      "/lib"
+    ]
+  },
   "scripts": {
+    "pretest": "npm run build",
+    "test": "npm run test:cs && npm run test:unit",
+    "test:cs": "standard | snazzy",
+    "test:unit": "jest unit.spec.js",
     "build": "babel src --source-maps -d lib",
     "minify": "uglifyjs lib/schemative.js --compress --preamble '//schemative, MIT, https://github.com/sospedra/schemative' --source-map lib/schemative.js.map --in-source-map lib/schemative.js.map --mangle -o lib/schemative.js",
     "prepublish": "npm run build && npm run minify"

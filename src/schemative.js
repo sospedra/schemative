@@ -8,7 +8,7 @@ const createType = (type, def) => ({
 })
 
 const createFunctionType = (type) => (values) => ({
-  propTypes: PropTypes[type](values),
+  propTypes: PropTypes[type],
   value: values,
   iterable: true
 })
