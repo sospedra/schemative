@@ -1,6 +1,7 @@
 /* global describe, it, expect */
 import { PropTypes } from 'react'
 import * as Schemative from '../src/schemative'
+// import * as parsers from '../src/parsers'
 import * as mocks from './mocks'
 
 describe('Suite types', () => {
@@ -69,4 +70,8 @@ describe('Suite createSchema', () => {
     }
     expect(complexNested).toMatchSnapshot()
   })
+})
+
+describe('Suite parsers', () => {
+  it('should ')
 })
