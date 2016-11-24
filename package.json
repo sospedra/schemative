@@ -2,7 +2,7 @@
   "name": "schemative",
   "version": "0.0.1",
   "description": "Declarative schemas with propTypes, default values and transformers",
-  "main": "index.js",
+  "main": "lib/schemative.js",
   "repository": {
     "url": "https://github.com/sospedra/schemative.git",
     "type": "git"
@@ -19,10 +19,12 @@
     "babel-preset-stage-0": "^6.16.0",
     "jest": "^17.0.3",
     "snazzy": "^5.0.0",
-    "standard": "^8.6.0"
+    "standard": "^8.6.0",
+    "uglify-js": "^2.7.4"
   },
   "scripts": {
     "build": "babel src --source-maps -d lib",
-    "prepublish": "npm run compile"
+    "minify": "uglifyjs lib/schemative.js --compress --preamble '//schemative, MIT, https://github.com/sospedra/schemative' --source-map lib/schemative.js.map --in-source-map lib/schemative.js.map --mangle -o lib/schemative.js",
+    "prepublish": "npm run build && npm run minify"
   }
 }

@@ -67,15 +67,17 @@ export const filterByKeys = (schema, candidate) => {
   return _.pick(candidate, keys)
 }
 
-export const transform = (schema, candidate, attributes) => ({
-  ...filterByKeys(schema, candidate),
-  ..._.reduce(attributes, (memo, value, key) => ({
-    ...memo,
-    [key]: _.isFunction(value) ? value(candidate) : value
-  }), {})
-})
+export const transform = (schema, candidate, attributes) => Object.assign(
+  filterByKeys(schema, candidate),
+  _.reduce(attributes, (memo, value, key) => Object.assign(
+    memo,
+    {
+      [key]: _.isFunction(value) ? value(candidate) : value
+    }
+  ), {})
+)
 
-export default (schema) => ({
+export const createSchema = (schema) => ({
   PropTypes: createPropTypes(schema),
   Default: createDefault(schema),
   transform: transform.bind(null, schema)
