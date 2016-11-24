@@ -1,6 +1,4 @@
-const mocks = module.exports = {}
-
-mocks.types = [
+export const types = [
   'array',
   'bool',
   'func',
@@ -14,7 +12,7 @@ mocks.types = [
   'node'
 ]
 
-mocks.functionTypes = [
+export const functionTypes = [
   ['oneOf', []],
   ['oneOfType', []],
   ['arrayOf', []],

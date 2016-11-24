@@ -1,7 +1,7 @@
 /* global describe, it, expect */
-const { PropTypes } = require('react')
-const Schemative = require('../src/schemative')
-const mocks = require('./mocks')
+import { PropTypes } from 'react'
+import * as Schemative from '../src/schemative'
+import * as mocks from './mocks'
 
 describe('Types suite', () => {
   it('should have exist all the defined types', () => {
