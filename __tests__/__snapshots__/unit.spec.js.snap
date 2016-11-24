@@ -1,4 +1,103 @@
-exports[`Types suite should have exist all the defined types 1`] = `
+exports[`Suite createSchema should create from a complex nested definition 1`] = `
+Object {
+  "geo": Object {
+    "iterable": true,
+    "propTypes": [Function],
+    "value": Object {
+      "coord": Object {
+        "iterable": false,
+        "propTypes": [Function],
+        "value": -1,
+      },
+      "country": Object {
+        "iterable": true,
+        "propTypes": [Function],
+        "value": Object {
+          "flag": Object {
+            "iterable": true,
+            "propTypes": [Function],
+            "value": Array [
+              Object {
+                "iterable": false,
+                "propTypes": [Function],
+                "value": "",
+              },
+              Object {
+                "iterable": false,
+                "propTypes": [Function],
+                "value": "",
+              },
+            ],
+          },
+          "id": Object {
+            "iterable": false,
+            "propTypes": [Function],
+            "value": -1,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`Suite createSchema should create from a complex non-nested definition 1`] = `
+Object {
+  "Default": Object {
+    "contacts": Array [],
+    "geo": Object {},
+    "getName": undefined,
+  },
+  "PropTypes": Object {
+    "contacts": [Function],
+    "geo": [Function],
+    "getName": [Function],
+  },
+  "transform": [Function],
+}
+`;
+
+exports[`Suite createSchema should create from a simple nested definition 1`] = `
+Object {
+  "contacts": Object {
+    "iterable": true,
+    "propTypes": [Function],
+    "value": Array [
+      Object {
+        "iterable": false,
+        "propTypes": [Function],
+        "value": -1,
+      },
+      Object {
+        "iterable": false,
+        "propTypes": [Function],
+        "value": -1,
+      },
+    ],
+  },
+  "name": Object {
+    "iterable": false,
+    "propTypes": [Function],
+    "value": "",
+  },
+}
+`;
+
+exports[`Suite createSchema should create from a simple non-nested definition 1`] = `
+Object {
+  "Default": Object {
+    "name": "",
+    "year": -1,
+  },
+  "PropTypes": Object {
+    "name": [Function],
+    "year": [Function],
+  },
+  "transform": [Function],
+}
+`;
+
+exports[`Suite types should have exist all the defined types 1`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -6,7 +105,7 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 2`] = `
+exports[`Suite types should have exist all the defined types 2`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -14,7 +113,7 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 3`] = `
+exports[`Suite types should have exist all the defined types 3`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -22,7 +121,7 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 4`] = `
+exports[`Suite types should have exist all the defined types 4`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -30,7 +129,7 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 5`] = `
+exports[`Suite types should have exist all the defined types 5`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -38,7 +137,7 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 6`] = `
+exports[`Suite types should have exist all the defined types 6`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -46,7 +145,7 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 7`] = `
+exports[`Suite types should have exist all the defined types 7`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -54,7 +153,7 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 8`] = `
+exports[`Suite types should have exist all the defined types 8`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -62,7 +161,7 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 9`] = `
+exports[`Suite types should have exist all the defined types 9`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -70,7 +169,7 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 10`] = `
+exports[`Suite types should have exist all the defined types 10`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -78,7 +177,7 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 11`] = `
+exports[`Suite types should have exist all the defined types 11`] = `
 Object {
   "iterable": false,
   "propTypes": [Function],
@@ -86,12 +185,12 @@ Object {
 }
 `;
 
-exports[`Types suite should have exist all the defined types 12`] = `[Function]`;
+exports[`Suite types should have exist all the defined types 12`] = `[Function]`;
 
-exports[`Types suite should have exist all the defined types 13`] = `[Function]`;
+exports[`Suite types should have exist all the defined types 13`] = `[Function]`;
 
-exports[`Types suite should have exist all the defined types 14`] = `[Function]`;
+exports[`Suite types should have exist all the defined types 14`] = `[Function]`;
 
-exports[`Types suite should have exist all the defined types 15`] = `[Function]`;
+exports[`Suite types should have exist all the defined types 15`] = `[Function]`;
 
-exports[`Types suite should have exist all the defined types 16`] = `[Function]`;
+exports[`Suite types should have exist all the defined types 16`] = `[Function]`;
