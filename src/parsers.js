@@ -36,12 +36,10 @@ export const filterByKeys = (schema, candidate) => {
   return _.pick(candidate, keys)
 }
 
-export const transform = (schema, candidate, attributes) => Object.assign(
+export const transform = (schema, candidate, mutators) => Object.assign(
   filterByKeys(schema, candidate),
-  _.reduce(attributes, (memo, value, key) => Object.assign(
-    memo,
-    {
-      [key]: _.isFunction(value) ? value(candidate) : value
-    }
-  ), {})
+  _.reduce(mutators, (memo, value, key) => Object.assign({
+    [key]: _.isFunction(value) ? value(candidate) : value,
+    memo
+  }), {})
 )

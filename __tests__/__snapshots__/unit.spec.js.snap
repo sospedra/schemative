@@ -13,28 +13,28 @@ Object {
         "iterable": true,
         "propTypes": [Function],
         "value": Object {
-          "flag": Object {
-            "iterable": true,
-            "propTypes": [Function],
-            "value": Array [
-              Object {
-                "iterable": false,
-                "propTypes": [Function],
-                "value": "",
-              },
-              Object {
-                "iterable": false,
-                "propTypes": [Function],
-                "value": "",
-              },
-            ],
-          },
           "id": Object {
             "iterable": false,
             "propTypes": [Function],
             "value": -1,
           },
         },
+      },
+      "flag": Object {
+        "iterable": true,
+        "propTypes": [Function],
+        "value": Array [
+          Object {
+            "iterable": false,
+            "propTypes": [Function],
+            "value": "",
+          },
+          Object {
+            "iterable": false,
+            "propTypes": [Function],
+            "value": "",
+          },
+        ],
       },
     },
   },
@@ -47,11 +47,15 @@ Object {
     "contacts": Array [],
     "geo": Object {},
     "getName": undefined,
+    "name": "",
+    "year": -1,
   },
   "PropTypes": Object {
     "contacts": [Function],
     "geo": [Function],
     "getName": [Function],
+    "name": [Function],
+    "year": [Function],
   },
   "transform": [Function],
 }
@@ -59,7 +63,7 @@ Object {
 
 exports[`Suite createSchema should create from a simple nested definition 1`] = `
 Object {
-  "contacts": Object {
+  "contact": Object {
     "iterable": true,
     "propTypes": [Function],
     "value": Array [
@@ -94,6 +98,69 @@ Object {
     "year": [Function],
   },
   "transform": [Function],
+}
+`;
+
+exports[`Suite parsers should create an schema given an array 1`] = `Array []`;
+
+exports[`Suite parsers should create an schema given an object 1`] = `Object {}`;
+
+exports[`Suite parsers should create the schema default values 1`] = `
+Object {
+  "arr": undefined,
+  "dispatch": undefined,
+  "func": undefined,
+  "shape": Object {
+    "deep": Object {
+      "nested": "",
+    },
+    "id": -1,
+    "object": Object {},
+  },
+  "value": -1,
+}
+`;
+
+exports[`Suite parsers should select an strategy for recursivity 1`] = `Object {}`;
+
+exports[`Suite parsers should select an strategy for recursivity 2`] = `Object {}`;
+
+exports[`Suite parsers should transform a definition using mutators 1`] = `
+Object {
+  "memo": Object {
+    "extra": "attribute",
+    "memo": Object {},
+  },
+  "name": "Ada Lovelace",
+  "year": 1852,
+}
+`;
+
+exports[`Suite schema should return a new fulfilled object after transform 1`] = `Object {}`;
+
+exports[`Suite schema should return a new fulfilled object with mutators 1`] = `
+Object {
+  "memo": Object {
+    "extra": "attribute",
+    "memo": Object {},
+  },
+  "year": 1852,
+}
+`;
+
+exports[`Suite schema should return the default values 1`] = `
+Object {
+  "arr": undefined,
+  "dispatch": undefined,
+  "func": undefined,
+  "shape": Object {
+    "deep": Object {
+      "nested": "",
+    },
+    "id": -1,
+    "object": Object {},
+  },
+  "value": -1,
 }
 `;
 

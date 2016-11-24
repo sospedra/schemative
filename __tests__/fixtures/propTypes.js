@@ -1,5 +1,5 @@
 import { PropTypes } from 'react'
-import Schemative from '../index'
+import * as Schemative from '../../src/schemative'
 
 export const reactPropTypes = {
   value: PropTypes.number,
@@ -32,4 +32,40 @@ export const schemativePropTypes = {
     PropTypes.number,
     PropTypes.string
   ])
+}
+
+export const simple = {
+  name: Schemative.string,
+  year: Schemative.number
+}
+
+export const complex = Object.assign({
+  contacts: Schemative.array,
+  geo: Schemative.object,
+  getName: Schemative.func
+}, simple)
+
+export const array = Schemative.arrayOf([
+  Schemative.number,
+  Schemative.number
+])
+
+export const simpleNested = {
+  name: Schemative.string,
+  contact: array
+}
+
+export const object = Schemative.shape({
+  id: Schemative.number
+})
+
+export const complexNested = {
+  geo: Schemative.objectOf({
+    coord: Schemative.number,
+    country: object,
+    flag: Schemative.arrayOf([
+      Schemative.string,
+      Schemative.string
+    ])
+  })
 }

@@ -1,3 +1,31 @@
+import {
+  reactPropTypes,
+  schemativePropTypes,
+  simple,
+  complex,
+  simpleNested,
+  complexNested
+} from './fixtures/propTypes'
+
+export const defs = {
+  reactPropTypes,
+  schemativePropTypes,
+  simple,
+  complex,
+  simpleNested,
+  complexNested
+}
+
+export const fulfilled = {
+  name: 'Ada Lovelace',
+  year: 1815
+}
+
+export const mutators = {
+  extra: 'attribute',
+  year: (candidate) => candidate.year + 37
+}
+
 export const types = [
   'array',
   'bool',
