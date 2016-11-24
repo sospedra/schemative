@@ -22,6 +22,7 @@
     "standard": "^8.6.0"
   },
   "scripts": {
-    "build": "babel src --source-maps -d lib"
+    "build": "babel src --source-maps -d lib",
+    "prepublish": "npm run compile"
   }
 }
