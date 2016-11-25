@@ -16,6 +16,7 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
+    "codeclimate-test-reporter": "^0.4.0",
     "jest": "^17.0.3",
     "semantic-release": "^6.3.2",
     "snazzy": "^5.0.0",
@@ -35,12 +36,13 @@
   },
   "scripts": {
     "pretest": "npm run build",
-    "test": "npm run test:cs && npm run test:unit",
+    "test": "npm run test:cs && npm run test:unit && npm run test:coverage",
     "test:cs": "standard | snazzy",
     "test:unit": "jest unit.spec.js",
     "build": "babel src --source-maps -d lib",
     "minify": "uglifyjs lib/schemative.js --compress --preamble '//schemative, MIT, https://github.com/sospedra/schemative' --source-map lib/schemative.js.map --in-source-map lib/schemative.js.map --mangle -o lib/schemative.js",
     "prepublish": "npm run build && npm run minify",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test:coverage": "CODECLIMATE_REPO_TOKEN=af15e90f8787ea0ef912a27f089ce1f88f30565bc7ee088b5d767affb01e615d codeclimate-test-reporter < coverage/lcov.info"
   }
 }
