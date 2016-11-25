@@ -1,11 +1,12 @@
-engines: 
+engines:
   eslint:
     enabled: true
   duplication:
     enabled: true
     config:
       languages:
-    - javascript
+        ruby:
+        javascript:
 
 exclude_paths:
 - lib/**/*
