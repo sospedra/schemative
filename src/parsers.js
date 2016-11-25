@@ -1,43 +1,47 @@
 import _ from 'lodash'
 
-export const createSchemaByObject = (schema, attr) => {
-  return _.entries(schema)
-    .reduce((memo, [key, value]) => {
-      memo[key] = value.iterable
-        ? selectRecursiveStrategy(value.value, attr)
-        : value[attr]
-      return memo
-    }, {})
+export const getPropType = (prop, attr) => {
+  return prop.iterable ? recursiveValues(prop, attr) : prop[attr]
 }
-export const createSchemaByArray = (schema, attr) => {
-  return _.map(schema, (values) => {
-    return values.iterable
-      ? selectRecursiveStrategy(values.value, attr)
-      : values[attr]
+
+export const recursiveObject = (values, attr) => {
+  return _.reduce(values, (memo, prop, key) => Object.assign({
+    [key]: getPropType(prop, attr)
+  }, memo), {})
+}
+
+export const recursiveArray = (values, attr) => {
+  return _.map(values, (prop) => {
+    return getPropType(prop, attr)
   })
 }
 
-export const selectRecursiveStrategy = (nestedSchema, attr) => {
-  return _.isArray(nestedSchema)
-    ? createSchemaByArray(nestedSchema, attr)
-    : createSchemaByObject(nestedSchema, attr)
+export const selectRecursiveStrategy = (values, attr) => {
+  return _.isArray(values)
+    ? recursiveArray(values, attr)
+    : recursiveObject(values, attr)
 }
 
-export const createPropTypes = (schema) => {
-  return createSchemaByObject(schema, 'propTypes')
+export const recursiveValues = ({ type, values }, attr) => {
+  const exec = attr === 'type' ? type : _.identity
+  return exec(selectRecursiveStrategy(values, attr))
 }
 
-export const createDefault = (schema) => {
-  return createSchemaByObject(schema, 'value')
+export const createPropTypes = (definition) => {
+  return recursiveObject(definition, 'type')
 }
 
-export const filterByKeys = (schema, candidate) => {
-  const keys = _.intersection(_.keys(schema), _.keys(candidate))
+export const createDefault = (definition) => {
+  return recursiveObject(definition, 'default')
+}
+
+export const filterByKeys = (definition, candidate) => {
+  const keys = _.intersection(_.keys(definition), _.keys(candidate))
   return _.pick(candidate, keys)
 }
 
-export const transform = (schema, candidate, mutators) => Object.assign(
-  filterByKeys(schema, candidate),
+export const transform = (definition, candidate, mutators) => Object.assign(
+  filterByKeys(definition, candidate),
   _.reduce(mutators, (memo, value, key) => Object.assign({
     [key]: _.isFunction(value) ? value(candidate) : value,
     memo

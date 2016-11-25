@@ -7,14 +7,14 @@ import {
 } from './parsers'
 
 const createType = (type, def) => ({
-  propTypes: PropTypes[type],
-  value: def,
+  type: PropTypes[type],
+  default: def,
   iterable: false
 })
 
 const createFunctionType = (type) => (values) => ({
-  propTypes: PropTypes[type],
-  value: values,
+  type: PropTypes[type],
+  values: values,
   iterable: true
 })
 
@@ -35,8 +35,8 @@ export const arrayOf = createFunctionType('arrayOf')
 export const objectOf = createFunctionType('objectOf')
 export const shape = createFunctionType('shape')
 
-export const createSchema = (schema) => ({
-  PropTypes: createPropTypes(schema),
-  Default: createDefault(schema),
-  transform: transform.bind(null, schema)
+export const createSchema = (definition) => ({
+  PropTypes: createPropTypes(definition),
+  Default: createDefault(definition),
+  transform: transform.bind(null, definition)
 })
