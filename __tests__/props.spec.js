@@ -3,11 +3,23 @@ import React from 'react'
 import * as Schemative from '../src/schemative'
 
 console.error = jest.fn()
+const createErrorMessage = ({ attr, type, expected, component }) => [
+  'Warning: Failed prop type: Invalid prop',
+  `\`${attr}\` of type \`${type}\``,
+  `supplied to \`${component}\`,`,
+  `expected \`${expected}\`.\n`,
+  `   in ${component}`
+].join(' ')
 
 describe('React prop types suite', () => {
   it(`should fail when props don't match`, () => {
     const Simple = (props) => (<div className={props.name} />)
-    const errorMessage = 'Warning: Failed prop type: Invalid prop `foo` of type `number` supplied to `Simple`, expected `string`.\n    in Simple'
+    const errorMessage = createErrorMessage({
+      attr: 'foo',
+      type: 'number',
+      component: 'Simple',
+      expected: 'string'
+    })
     const schema = Schemative.createSchema({
       foo: Schemative.string
     })
@@ -21,13 +33,15 @@ describe('React prop types suite', () => {
 
   it(`should fail when props don't match with nested props`, () => {
     const Complex = (props) => (<div className={props.name} />)
-    const errorMessage = 'Warning: Failed prop type: Invalid prop `name` of type `number` supplied to `Foo`, expected `string`.\n    in Foo'
+    const errorMessage = createErrorMessage({
+      attr: 'foo.bar',
+      type: 'number',
+      component: 'Complex',
+      expected: 'array'
+    })
     const schema = Schemative.createSchema({
-      foo: Schemative.objectOf({
-        bar: Schemative.arrayOf([
-          Schemative.string,
-          Schemative.string
-        ])
+      foo: Schemative.shape({
+        bar: Schemative.array
       })
     })
 
@@ -35,6 +49,6 @@ describe('React prop types suite', () => {
 
     ;(<Complex foo={{ bar: 2 }} />)
 
-    expect(console.error).toHaveBeenLastCalledWith(errorMessage)
+    expect(console.error).toHaveBeenCalledWith(errorMessage)
   })
 })
