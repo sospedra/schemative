@@ -17,11 +17,11 @@ describe('Suite types', () => {
 
   it('should be compatible with React.PropTypes', () => {
     mocks.types.forEach((type) => {
-      expect(Schemative[type].propTypes).toEqual(PropTypes[type])
+      expect(Schemative[type].type).toEqual(PropTypes[type])
     })
 
     mocks.functionTypes.forEach(([type, baseType]) => {
-      expect(Schemative[type](baseType).propTypes).toEqual(PropTypes[type])
+      expect(Schemative[type](baseType).type).toEqual(PropTypes[type])
     })
   })
 })
@@ -46,8 +46,8 @@ describe('Suite createSchema', () => {
 
 describe('Suite parsers', () => {
   const {
-    createSchemaByObject,
-    createSchemaByArray,
+    recursiveObject,
+    recursiveArray,
     selectRecursiveStrategy,
     createPropTypes,
     createDefault,
@@ -56,11 +56,11 @@ describe('Suite parsers', () => {
   } = parsers
 
   it('should create an schema given an object', () => {
-    expect(createSchemaByObject(mocks.defs.object)).toMatchSnapshot()
+    expect(recursiveObject(mocks.defs.object)).toMatchSnapshot()
   })
 
   it('should create an schema given an array', () => {
-    expect(createSchemaByArray(mocks.defs.array)).toMatchSnapshot()
+    expect(recursiveArray(mocks.defs.array)).toMatchSnapshot()
   })
 
   it('should select an strategy for recursivity', () => {
@@ -69,9 +69,7 @@ describe('Suite parsers', () => {
   })
 
   it('should create the schema prop types', () => {
-    const propTypes = createPropTypes(mocks.defs.schemativePropTypes)
-    expect(propTypes).toMatchSnapshot()
-    expect(propTypes).toEqual(mocks.defs.reactPropTypes)
+    expect(createPropTypes(mocks.defs.schemativePropTypes)).toMatchSnapshot()
   })
 
   it('should create the schema default values', () => {
@@ -95,7 +93,6 @@ describe('Suite schema', () => {
   const schema = Schemative.createSchema(mocks.defs.schemativePropTypes)
 
   it('should return the PropTypes', () => {
-    expect(schema.PropTypes).toEqual(mocks.defs.reactPropTypes)
     expect(schema.PropTypes).toMatchSnapshot()
   })
 

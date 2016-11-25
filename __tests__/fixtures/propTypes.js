@@ -11,6 +11,7 @@ export const reactPropTypes = {
     })
   }),
   func: PropTypes.func,
+  dispatch: PropTypes.func,
   arr: PropTypes.arrayOf([
     PropTypes.number,
     PropTypes.string
@@ -28,9 +29,9 @@ export const schemativePropTypes = {
   }),
   func: Schemative.func,
   dispatch: Schemative.func,
-  arr: PropTypes.arrayOf([
-    PropTypes.number,
-    PropTypes.string
+  arr: Schemative.arrayOf([
+    Schemative.number,
+    Schemative.string
   ])
 }
 
