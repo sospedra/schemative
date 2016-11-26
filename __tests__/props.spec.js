@@ -79,4 +79,24 @@ describe('React prop types suite', () => {
 
     expect(console.error).toHaveBeenCalledWith(errorMessage)
   })
+
+  it(`should fail when isRequired prop is not present in a nested component`, () => {
+    const RequiredNested = (props) => (<div className={props.name} />)
+    const errorMessage = createErrorMissing({
+      attr: 'foo.baz',
+      component: 'RequiredNested'
+    })
+    const schema = Schemative.createSchema({
+      foo: Schemative.shape({
+        bar: Schemative.number,
+        baz: Schemative.node.isRequired
+      })
+    })
+
+    RequiredNested.propTypes = schema.PropTypes
+
+    ;(<RequiredNested foo={{ bar: 2 }} />)
+
+    expect(console.error).toHaveBeenCalledWith(errorMessage)
+  })
 })
