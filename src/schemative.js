@@ -8,9 +8,9 @@ import {
 
 const boundIsRequire = (prototype) => {
   return Object.defineProperty(prototype, 'isRequired', {
-    value: Object.assign({
-      isRequired: true
-    }, prototype)
+    value: Object.assign({}, prototype, {
+      type: prototype.type.isRequired
+    })
   })
 }
 

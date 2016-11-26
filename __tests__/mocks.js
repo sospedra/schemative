@@ -4,7 +4,8 @@ import {
   simple,
   complex,
   simpleNested,
-  complexNested
+  complexNested,
+  isRequiredPropTypes
 } from './fixtures/propTypes'
 
 export const defs = {
@@ -13,7 +14,8 @@ export const defs = {
   simple,
   complex,
   simpleNested,
-  complexNested
+  complexNested,
+  isRequiredPropTypes
 }
 
 export const fulfilled = {

@@ -28,12 +28,12 @@ describe('Suite types', () => {
   it('should allow isRequired extra prop', () => {
     mocks.types.forEach((type) => {
       expect(Schemative[type].isRequired).toMatchSnapshot()
-      // expect(Schemative[type].type.isRequired).toEqual(PropTypes[type].isRequired)
+      expect(Schemative[type].type.isRequired).toEqual(PropTypes[type].isRequired)
     })
 
     mocks.functionTypes.forEach(([type, baseType]) => {
       expect(Schemative[type].isRequired).toMatchSnapshot()
-      // expect(Schemative[type](baseType).type.isRequired).toEqual(PropTypes[type].isRequired)
+      expect(Schemative[type](baseType).type.isRequired).toEqual(PropTypes[type].isRequired)
     })
   })
 })
@@ -82,6 +82,10 @@ describe('Suite parsers', () => {
 
   it('should create the schema prop types', () => {
     expect(createPropTypes(mocks.defs.schemativePropTypes)).toMatchSnapshot()
+  })
+
+  it('should create the schema prop types with isRequired', () => {
+    expect(createPropTypes(mocks.defs.isRequiredPropTypes)).toMatchSnapshot()
   })
 
   it('should create the schema default values', () => {
