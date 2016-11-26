@@ -1,0 +1,108 @@
+exports[`Suite types should allow isRequired extra prop 1`] = `
+Object {
+  "default": Array [],
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 2`] = `
+Object {
+  "default": true,
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 3`] = `
+Object {
+  "default": undefined,
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 4`] = `
+Object {
+  "default": -1,
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 5`] = `
+Object {
+  "default": Object {},
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 6`] = `
+Object {
+  "default": "",
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 7`] = `
+Object {
+  "default": [Function],
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 8`] = `
+Object {
+  "default": true,
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 9`] = `
+Object {
+  "default": false,
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 10`] = `
+Object {
+  "default": false,
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 11`] = `
+Object {
+  "default": false,
+  "isRequired": true,
+  "iterable": false,
+  "type": [Function],
+}
+`;
+
+exports[`Suite types should allow isRequired extra prop 12`] = `undefined`;
+
+exports[`Suite types should allow isRequired extra prop 13`] = `undefined`;
+
+exports[`Suite types should allow isRequired extra prop 14`] = `undefined`;
+
+exports[`Suite types should allow isRequired extra prop 15`] = `undefined`;
+
+exports[`Suite types should allow isRequired extra prop 16`] = `undefined`;

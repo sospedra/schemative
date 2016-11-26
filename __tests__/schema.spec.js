@@ -24,6 +24,18 @@ describe('Suite types', () => {
       expect(Schemative[type](baseType).type).toEqual(PropTypes[type])
     })
   })
+
+  it('should allow isRequired extra prop', () => {
+    mocks.types.forEach((type) => {
+      expect(Schemative[type].isRequired).toMatchSnapshot()
+      // expect(Schemative[type].type.isRequired).toEqual(PropTypes[type].isRequired)
+    })
+
+    mocks.functionTypes.forEach(([type, baseType]) => {
+      expect(Schemative[type].isRequired).toMatchSnapshot()
+      // expect(Schemative[type](baseType).type.isRequired).toEqual(PropTypes[type].isRequired)
+    })
+  })
 })
 
 describe('Suite createSchema', () => {
