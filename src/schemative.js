@@ -6,13 +6,21 @@ import {
   transform
 } from './parsers'
 
-const createType = (type, def) => ({
+const boundIsRequire = (prototype) => {
+  return Object.defineProperty(prototype, 'isRequired', {
+    value: Object.assign({
+      isRequired: true
+    }, prototype)
+  })
+}
+
+const createType = (type, def) => boundIsRequire({
   type: PropTypes[type],
   default: def,
   iterable: false
 })
 
-const createFunctionType = (type) => (values) => ({
+const createFunctionType = (type) => (values) => boundIsRequire({
   type: PropTypes[type],
   values: values,
   iterable: true
