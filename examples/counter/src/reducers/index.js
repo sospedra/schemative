@@ -1,4 +1,4 @@
-import defaultState from './state'
+import defaultState from '../state'
 
 // Stop worrying about initial state
 export default (state = defaultState, action) => {

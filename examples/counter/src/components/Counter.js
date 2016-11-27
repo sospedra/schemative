@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react'
-import { schema } from './state'
+import { schema } from '../state'
 
 class Counter extends Component {
   // Extends the state propTypes with the container dispatchToProps
+  // Note: Schemative and React.PropTypes are 100% compatible
   static propTypes = Object.assign({
     onIncrement: PropTypes.func.isRequired,
     onDecrement: PropTypes.func.isRequired
