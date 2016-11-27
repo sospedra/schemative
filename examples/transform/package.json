@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "axios": "^0.15.2",
+    "schemative": "^2.0.0"
+  }
+}
