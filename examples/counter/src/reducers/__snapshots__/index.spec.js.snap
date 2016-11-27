@@ -1,0 +1,17 @@
+exports[`reducers counter should handle DECREMENT action 1`] = `
+Object {
+  "value": -2
+}
+`;
+
+exports[`reducers counter should handle INCREMENT action 1`] = `
+Object {
+  "value": 0
+}
+`;
+
+exports[`reducers counter should ignore unknown actions 1`] = `
+Object {
+  "value": -1
+}
+`;
