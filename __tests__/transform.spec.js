@@ -4,7 +4,8 @@ import * as mocks from './mocks'
 
 describe('Transform suite', () => {
   it('should filter by keys two objects', () => {
-    expect(filterByKeys(mocks.defs.simple, mocks.defs.complex)).toEqual(mocks.defs.simple)
+    const keys = Object.keys(mocks.defs.simple)
+    expect(filterByKeys(keys, mocks.defs.complex)).toEqual(mocks.defs.simple)
   })
 
   it('should transform a definition into a fulfilled object', () => {

@@ -101,11 +101,17 @@ Object {
 }
 `;
 
-exports[`Suite schema should return a new fulfilled object after transform 1`] = `Object {}`;
+exports[`Suite schema should return a new fulfilled object after transform 1`] = `
+Object {
+  "name": "Ada Lovelace",
+  "year": 1815,
+}
+`;
 
 exports[`Suite schema should return a new fulfilled object with mutators 1`] = `
 Object {
   "extra": "attribute",
+  "name": "Ada Lovelace",
   "year": 1852,
 }
 `;

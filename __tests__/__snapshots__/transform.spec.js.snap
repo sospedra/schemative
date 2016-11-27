@@ -1,6 +1,5 @@
 exports[`Transform suite should be able to define agent mutators 1`] = `
 Object {
-  "foo": "bar",
   "name": "Ada Lovelace",
   "year": 1815,
 }
@@ -8,8 +7,7 @@ Object {
 
 exports[`Transform suite should transform a definition using mutators 1`] = `
 Object {
-  "extra": "attribute",
   "name": "Ada Lovelace",
-  "year": 1852,
+  "year": 1815,
 }
 `;
