@@ -1,10 +1,7 @@
 import { PropTypes } from 'react'
 import _ from 'lodash/util'
-import {
-  createPropTypes,
-  createDefault,
-  transform
-} from './parsers'
+import { createPropTypes, createDefault } from './parsers'
+import { transform } from './transform'
 
 const boundIsRequire = (prototype) => {
   return Object.defineProperty(prototype, 'isRequired', {
