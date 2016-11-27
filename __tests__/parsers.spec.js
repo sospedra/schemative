@@ -10,9 +10,7 @@ describe('Suite parsers', () => {
     selectRecursiveStrategy,
     recursiveValues,
     createPropTypes,
-    createDefault,
-    filterByKeys,
-    transform
+    createDefault
   } = parsers
 
   const defObject = Object.assign({}, mocks.defs.object, {
@@ -57,17 +55,5 @@ describe('Suite parsers', () => {
 
   it('should create the schema default values', () => {
     expect(createDefault(mocks.defs.schemativePropTypes)).toMatchSnapshot()
-  })
-
-  it('should filter by keys two objects', () => {
-    expect(filterByKeys(mocks.defs.simple, mocks.defs.complex)).toEqual(mocks.defs.simple)
-  })
-
-  it('should transform a definition into a fulfilled object', () => {
-    expect(transform(mocks.defs.simple, mocks.fulfilled)).toEqual(mocks.fulfilled)
-  })
-
-  it('should transform a definition using mutators', () => {
-    expect(transform(mocks.defs.simple, mocks.fulfilled, mocks.mutators)).toMatchSnapshot()
   })
 })

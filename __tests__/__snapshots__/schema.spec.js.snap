@@ -105,10 +105,7 @@ exports[`Suite schema should return a new fulfilled object after transform 1`] =
 
 exports[`Suite schema should return a new fulfilled object with mutators 1`] = `
 Object {
-  "memo": Object {
-    "extra": "attribute",
-    "memo": Object {},
-  },
+  "extra": "attribute",
   "year": 1852,
 }
 `;

@@ -65,14 +65,3 @@ Object {
   "values": undefined,
 }
 `;
-
-exports[`Suite parsers should transform a definition using mutators 1`] = `
-Object {
-  "memo": Object {
-    "extra": "attribute",
-    "memo": Object {},
-  },
-  "name": "Ada Lovelace",
-  "year": 1852,
-}
-`;
