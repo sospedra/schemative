@@ -58,10 +58,10 @@ If you want to get the **default values**:
 schema.Default
 // {
 //   name: '',
-//   year: -1,
+//   year: 0,
 //   address: {
 //     city: '',
-//     postalcode: -1
+//     postalcode: 0
 //   }
 // }
 ```
@@ -134,7 +134,7 @@ Used to generate the declarative schema.
 | element       |         false |               - |
 | func          |         *noop*|               - |
 | instanceOf    |         false |               - |
-| number        |            -1 |               - |
+| number        |             0 |               - |
 | node          |         false |               - |
 | object        |            {} |               - |
 | string        |            '' |               - |

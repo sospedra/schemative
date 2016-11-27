@@ -17,7 +17,7 @@ Object {
 exports[`Suite parsers should create the schema default values 1`] = `
 Object {
   "arr": Array [
-    -1,
+    0,
     "",
   ],
   "dispatch": undefined,
@@ -26,10 +26,10 @@ Object {
     "deep": Object {
       "nested": "",
     },
-    "id": -1,
+    "id": 0,
     "object": Object {},
   },
-  "value": -1,
+  "value": 0,
 }
 `;
 

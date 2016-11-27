@@ -41,7 +41,7 @@ describe('Suite parsers', () => {
   it('should execute a recursive strategy with PropType or identity', () => {
     expect(defObject.type).toHaveBeenCalled()
     expect(recursiveValues(defObject, 'default')).toEqual({
-      id: -1
+      id: 0
     })
   })
 

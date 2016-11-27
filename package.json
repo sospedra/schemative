@@ -39,7 +39,7 @@
     "pretest": "npm run build",
     "test": "npm run test:cs && npm run test:unit && npm run test:coverage",
     "test:cs": "standard | snazzy",
-    "test:unit": "jest \\.spec\\.js",
+    "test:unit": "jest __tests__/*\\.spec\\.js",
     "build": "babel src --source-maps -d lib",
     "prepublish": "npm run build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",

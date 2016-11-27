@@ -5,7 +5,7 @@ Object {
     "type": [Function],
     "values": Object {
       "coord": Object {
-        "default": -1,
+        "default": 0,
         "iterable": false,
         "type": [Function],
       },
@@ -14,7 +14,7 @@ Object {
         "type": [Function],
         "values": Object {
           "id": Object {
-            "default": -1,
+            "default": 0,
             "iterable": false,
             "type": [Function],
           },
@@ -48,7 +48,7 @@ Object {
     "geo": Object {},
     "getName": undefined,
     "name": "",
-    "year": -1,
+    "year": 0,
   },
   "PropTypes": Object {
     "contacts": [Function],
@@ -68,12 +68,12 @@ Object {
     "type": [Function],
     "values": Array [
       Object {
-        "default": -1,
+        "default": 0,
         "iterable": false,
         "type": [Function],
       },
       Object {
-        "default": -1,
+        "default": 0,
         "iterable": false,
         "type": [Function],
       },
@@ -91,7 +91,7 @@ exports[`Suite createSchema should create from a simple non-nested definition 1`
 Object {
   "Default": Object {
     "name": "",
-    "year": -1,
+    "year": 0,
   },
   "PropTypes": Object {
     "name": [Function],
@@ -129,7 +129,7 @@ Object {
 exports[`Suite schema should return the default values 1`] = `
 Object {
   "arr": Array [
-    -1,
+    0,
     "",
   ],
   "dispatch": undefined,
@@ -138,10 +138,10 @@ Object {
     "deep": Object {
       "nested": "",
     },
-    "id": -1,
+    "id": 0,
     "object": Object {},
   },
-  "value": -1,
+  "value": 0,
 }
 `;
 
@@ -171,7 +171,7 @@ Object {
 
 exports[`Suite types should allow isRequired extra prop 4`] = `
 Object {
-  "default": -1,
+  "default": 0,
   "iterable": false,
   "type": [Function],
 }
@@ -269,7 +269,7 @@ Object {
 
 exports[`Suite types should have exist all the defined types 4`] = `
 Object {
-  "default": -1,
+  "default": 0,
   "iterable": false,
   "type": [Function],
 }
