@@ -21,12 +21,12 @@
     "jest": "^17.0.3",
     "semantic-release": "^6.3.2",
     "snazzy": "^5.0.0",
-    "standard": "^8.6.0",
-    "uglify-js": "^2.7.4"
+    "standard": "^8.6.0"
   },
   "standard": {
     "ignore": [
-      "/lib"
+      "/lib",
+      "/examples"
     ]
   },
   "jest": {
