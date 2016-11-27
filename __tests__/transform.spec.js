@@ -1,5 +1,5 @@
 /* global describe, it, expect */
-import { filterByKeys, transform } from '../src/parsers'
+import { filterByKeys, transform } from '../src/transform'
 import * as mocks from './mocks'
 
 describe('Transform suite', () => {
@@ -13,5 +13,10 @@ describe('Transform suite', () => {
 
   it('should transform a definition using mutators', () => {
     expect(transform(mocks.defs.simple, mocks.fulfilled, mocks.mutators)).toMatchSnapshot()
+  })
+
+  it('should be able to define agent mutators', () => {
+    transform.mutators = { foo: 'bar' }
+    expect(transform(mocks.defs.simple, mocks.fulfilled)).toMatchSnapshot()
   })
 })
