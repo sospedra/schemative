@@ -5,6 +5,8 @@ import {
   complex,
   simpleNested,
   complexNested,
+  array,
+  object,
   isRequiredPropTypes
 } from './fixtures/propTypes'
 
@@ -15,6 +17,8 @@ export const defs = {
   complex,
   simpleNested,
   complexNested,
+  array,
+  object,
   isRequiredPropTypes
 }
 

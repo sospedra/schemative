@@ -4,14 +4,22 @@ import * as mocks from './mocks'
 
 describe('Suite parsers', () => {
   const {
+    getPropType,
     recursiveObject,
     recursiveArray,
     selectRecursiveStrategy,
+    recursiveValues,
     createPropTypes,
     createDefault,
     filterByKeys,
     transform
   } = parsers
+
+  it('should return the defined value or a recursion', () => {
+    expect(getPropType(mocks.defs.simple.name, 'type')).toBe(mocks.defs.simple.name.type)
+    expect(getPropType(mocks.defs.simple.name, 'default')).toBe(mocks.defs.simple.name.default)
+    expect(getPropType(mocks.defs.object, 'type')).toMatchSnapshot()
+  })
 
   it('should create an schema given an object', () => {
     expect(recursiveObject(mocks.defs.object)).toMatchSnapshot()

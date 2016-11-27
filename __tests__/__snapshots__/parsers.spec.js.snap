@@ -1,6 +1,18 @@
-exports[`Suite parsers should create an schema given an array 1`] = `Array []`;
+exports[`Suite parsers should create an schema given an array 1`] = `
+Array [
+  undefined,
+  undefined,
+  undefined,
+]
+`;
 
-exports[`Suite parsers should create an schema given an object 1`] = `Object {}`;
+exports[`Suite parsers should create an schema given an object 1`] = `
+Object {
+  "iterable": undefined,
+  "type": undefined,
+  "values": undefined,
+}
+`;
 
 exports[`Suite parsers should create the schema default values 1`] = `
 Object {
@@ -38,9 +50,23 @@ Object {
 }
 `;
 
-exports[`Suite parsers should select an strategy for recursivity 1`] = `Object {}`;
+exports[`Suite parsers should return the defined value or a recursion 1`] = `[Function]`;
 
-exports[`Suite parsers should select an strategy for recursivity 2`] = `Object {}`;
+exports[`Suite parsers should select an strategy for recursivity 1`] = `
+Object {
+  "iterable": undefined,
+  "type": undefined,
+  "values": undefined,
+}
+`;
+
+exports[`Suite parsers should select an strategy for recursivity 2`] = `
+Object {
+  "iterable": undefined,
+  "type": undefined,
+  "values": undefined,
+}
+`;
 
 exports[`Suite parsers should transform a definition using mutators 1`] = `
 Object {
