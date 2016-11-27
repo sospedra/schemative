@@ -101,61 +101,6 @@ Object {
 }
 `;
 
-exports[`Suite parsers should create an schema given an array 1`] = `Array []`;
-
-exports[`Suite parsers should create an schema given an object 1`] = `Object {}`;
-
-exports[`Suite parsers should create the schema default values 1`] = `
-Object {
-  "arr": Array [
-    -1,
-    "",
-  ],
-  "dispatch": undefined,
-  "func": undefined,
-  "shape": Object {
-    "deep": Object {
-      "nested": "",
-    },
-    "id": -1,
-    "object": Object {},
-  },
-  "value": -1,
-}
-`;
-
-exports[`Suite parsers should create the schema prop types 1`] = `
-Object {
-  "arr": [Function],
-  "dispatch": [Function],
-  "func": [Function],
-  "shape": [Function],
-  "value": [Function],
-}
-`;
-
-exports[`Suite parsers should create the schema prop types with isRequired 1`] = `
-Object {
-  "geo": [Function],
-  "req": [Function],
-}
-`;
-
-exports[`Suite parsers should select an strategy for recursivity 1`] = `Object {}`;
-
-exports[`Suite parsers should select an strategy for recursivity 2`] = `Object {}`;
-
-exports[`Suite parsers should transform a definition using mutators 1`] = `
-Object {
-  "memo": Object {
-    "extra": "attribute",
-    "memo": Object {},
-  },
-  "name": "Ada Lovelace",
-  "year": 1852,
-}
-`;
-
 exports[`Suite schema should return a new fulfilled object after transform 1`] = `Object {}`;
 
 exports[`Suite schema should return a new fulfilled object with mutators 1`] = `
@@ -200,7 +145,6 @@ Object {
 exports[`Suite types should allow isRequired extra prop 1`] = `
 Object {
   "default": Array [],
-  "isRequired": true,
   "iterable": false,
   "type": [Function],
 }
@@ -209,7 +153,6 @@ Object {
 exports[`Suite types should allow isRequired extra prop 2`] = `
 Object {
   "default": true,
-  "isRequired": true,
   "iterable": false,
   "type": [Function],
 }
@@ -218,7 +161,6 @@ Object {
 exports[`Suite types should allow isRequired extra prop 3`] = `
 Object {
   "default": undefined,
-  "isRequired": true,
   "iterable": false,
   "type": [Function],
 }
@@ -227,7 +169,6 @@ Object {
 exports[`Suite types should allow isRequired extra prop 4`] = `
 Object {
   "default": -1,
-  "isRequired": true,
   "iterable": false,
   "type": [Function],
 }
@@ -236,7 +177,6 @@ Object {
 exports[`Suite types should allow isRequired extra prop 5`] = `
 Object {
   "default": Object {},
-  "isRequired": true,
   "iterable": false,
   "type": [Function],
 }
@@ -245,7 +185,6 @@ Object {
 exports[`Suite types should allow isRequired extra prop 6`] = `
 Object {
   "default": "",
-  "isRequired": true,
   "iterable": false,
   "type": [Function],
 }
@@ -254,7 +193,6 @@ Object {
 exports[`Suite types should allow isRequired extra prop 7`] = `
 Object {
   "default": [Function],
-  "isRequired": true,
   "iterable": false,
   "type": [Function],
 }
@@ -263,7 +201,6 @@ Object {
 exports[`Suite types should allow isRequired extra prop 8`] = `
 Object {
   "default": true,
-  "isRequired": true,
   "iterable": false,
   "type": [Function],
 }
@@ -272,7 +209,6 @@ Object {
 exports[`Suite types should allow isRequired extra prop 9`] = `
 Object {
   "default": false,
-  "isRequired": true,
   "iterable": false,
   "type": [Function],
 }
@@ -281,16 +217,14 @@ Object {
 exports[`Suite types should allow isRequired extra prop 10`] = `
 Object {
   "default": false,
-  "isRequired": true,
   "iterable": false,
-  "type": [Function],
+  "type": undefined,
 }
 `;
 
 exports[`Suite types should allow isRequired extra prop 11`] = `
 Object {
   "default": false,
-  "isRequired": true,
   "iterable": false,
   "type": [Function],
 }
