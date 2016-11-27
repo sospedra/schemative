@@ -75,7 +75,8 @@ Once you have an schema you can **replenish** it transforming with a filled obje
 
 ```js
 const data = {
-  name: 'Ada Lovelace'
+  name: 'Ada Lovelace',
+  year: 1812
 }
 
 schema.transform(data)
