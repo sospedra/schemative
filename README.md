@@ -76,11 +76,15 @@ Once you have an schema you can **replenish** it transforming with a filled obje
 ```js
 const data = {
   name: 'Ada Lovelace',
-  year: 1812
+  year: 1812,
+  nope: 'Not defined in the schema'
 }
 
 schema.transform(data)
-// { name: 'Ada Lovelace' }
+// {
+//    name: 'Ada Lovelace',
+//    year: 1812
+// }
 ```
 
 *Note how those attributes that wasn't defined are excluded.*
@@ -102,7 +106,7 @@ schema.transform(data, {
 The **second flavor** is defined on **declarative time**:
 
 ```js
-schema.mutators = {
+schema.transform.utators = {
   change: 'something'
 }
 
