@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react'
+import { schema } from './state'
 
 class Counter extends Component {
-  static propTypes = {
-    value: PropTypes.number.isRequired,
+  // Extends the state propTypes with the container dispatchToProps
+  static propTypes = Object.assign({
     onIncrement: PropTypes.func.isRequired,
     onDecrement: PropTypes.func.isRequired
-  }
+  }, schema.PropTypes)
 
   incrementIfOdd = () => {
     if (this.props.value % 2 !== 0) {
