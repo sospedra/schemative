@@ -70,3 +70,15 @@ export const complexNested = {
     ])
   })
 }
+
+export const isRequiredPropTypes = {
+  req: Schemative.string.isRequired,
+  geo: Schemative.objectOf({
+    coord: Schemative.number.isRequired,
+    country: object,
+    flag: Schemative.arrayOf([
+      Schemative.string.isRequired,
+      Schemative.string
+    ])
+  })
+}

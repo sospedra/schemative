@@ -1,7 +1,9 @@
 import _ from 'lodash'
 
 export const getPropType = (prop, attr) => {
-  return prop.iterable ? recursiveValues(prop, attr) : prop[attr]
+  return prop.iterable
+    ? recursiveValues(prop, attr)
+    : prop[attr]
 }
 
 export const recursiveObject = (values, attr) => {

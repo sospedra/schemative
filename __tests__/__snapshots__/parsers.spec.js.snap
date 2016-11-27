@@ -1,0 +1,78 @@
+exports[`Suite parsers should create an schema given an array 1`] = `
+Array [
+  undefined,
+  undefined,
+  undefined,
+]
+`;
+
+exports[`Suite parsers should create an schema given an object 1`] = `
+Object {
+  "iterable": undefined,
+  "type": undefined,
+  "values": undefined,
+}
+`;
+
+exports[`Suite parsers should create the schema default values 1`] = `
+Object {
+  "arr": Array [
+    -1,
+    "",
+  ],
+  "dispatch": undefined,
+  "func": undefined,
+  "shape": Object {
+    "deep": Object {
+      "nested": "",
+    },
+    "id": -1,
+    "object": Object {},
+  },
+  "value": -1,
+}
+`;
+
+exports[`Suite parsers should create the schema prop types 1`] = `
+Object {
+  "arr": [Function],
+  "dispatch": [Function],
+  "func": [Function],
+  "shape": [Function],
+  "value": [Function],
+}
+`;
+
+exports[`Suite parsers should create the schema prop types with isRequired 1`] = `
+Object {
+  "geo": [Function],
+  "req": [Function],
+}
+`;
+
+exports[`Suite parsers should select an strategy for recursivity 1`] = `
+Object {
+  "iterable": undefined,
+  "type": undefined,
+  "values": undefined,
+}
+`;
+
+exports[`Suite parsers should select an strategy for recursivity 2`] = `
+Object {
+  "iterable": undefined,
+  "type": undefined,
+  "values": undefined,
+}
+`;
+
+exports[`Suite parsers should transform a definition using mutators 1`] = `
+Object {
+  "memo": Object {
+    "extra": "attribute",
+    "memo": Object {},
+  },
+  "name": "Ada Lovelace",
+  "year": 1852,
+}
+`;
