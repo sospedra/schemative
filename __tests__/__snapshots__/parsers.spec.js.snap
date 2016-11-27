@@ -50,8 +50,6 @@ Object {
 }
 `;
 
-exports[`Suite parsers should return the defined value or a recursion 1`] = `[Function]`;
-
 exports[`Suite parsers should select an strategy for recursivity 1`] = `
 Object {
   "iterable": undefined,

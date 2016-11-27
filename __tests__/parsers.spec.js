@@ -1,4 +1,4 @@
-/* global describe, it, expect */
+/* global jest, describe, it, expect */
 import * as parsers from '../src/parsers'
 import * as mocks from './mocks'
 
@@ -15,10 +15,16 @@ describe('Suite parsers', () => {
     transform
   } = parsers
 
+  const defObject = Object.assign({}, mocks.defs.object, {
+    type: jest.fn()
+  })
+
   it('should return the defined value or a recursion', () => {
     expect(getPropType(mocks.defs.simple.name, 'type')).toBe(mocks.defs.simple.name.type)
     expect(getPropType(mocks.defs.simple.name, 'default')).toBe(mocks.defs.simple.name.default)
-    expect(getPropType(mocks.defs.object, 'type')).toMatchSnapshot()
+
+    getPropType(defObject, 'type')
+    expect(defObject.type).toHaveBeenCalled()
   })
 
   it('should create an schema given an object', () => {
@@ -32,6 +38,13 @@ describe('Suite parsers', () => {
   it('should select an strategy for recursivity', () => {
     expect(selectRecursiveStrategy(mocks.defs.array)).toMatchSnapshot()
     expect(selectRecursiveStrategy(mocks.defs.object)).toMatchSnapshot()
+  })
+
+  it('should execute a recursive strategy with PropType or identity', () => {
+    expect(defObject.type).toHaveBeenCalled()
+    expect(recursiveValues(defObject, 'default')).toEqual({
+      id: -1
+    })
   })
 
   it('should create the schema prop types', () => {
