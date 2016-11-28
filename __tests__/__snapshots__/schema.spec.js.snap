@@ -121,8 +121,10 @@ Object {
   "arr": [Function],
   "dispatch": [Function],
   "func": [Function],
+  "name": [Function],
   "shape": [Function],
   "value": [Function],
+  "year": [Function],
 }
 `;
 
@@ -134,6 +136,7 @@ Object {
   ],
   "dispatch": undefined,
   "func": undefined,
+  "name": "",
   "shape": Object {
     "deep": Object {
       "nested": "",
@@ -142,6 +145,7 @@ Object {
     "object": Object {},
   },
   "value": 0,
+  "year": 0,
 }
 `;
 

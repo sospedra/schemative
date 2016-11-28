@@ -2,6 +2,8 @@ import { PropTypes } from 'react'
 import * as Schemative from '../../src/schemative'
 
 export const reactPropTypes = {
+  name: PropTypes.string,
+  year: PropTypes.number,
   value: PropTypes.number,
   shape: PropTypes.shape({
     id: PropTypes.number,
@@ -19,6 +21,8 @@ export const reactPropTypes = {
 }
 
 export const schemativePropTypes = {
+  name: Schemative.string,
+  year: Schemative.number,
   value: Schemative.number,
   shape: Schemative.shape({
     id: Schemative.number,
