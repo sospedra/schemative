@@ -17,7 +17,7 @@ export const transform = (candidate, mutators = protoMutators) => {
   return Object.assign(
     filterByKeys(defsKeys, candidate),
     _.reduce(mutators, (memo, value, key) => Object.assign({
-      [key]: _.isFunction(value) ? value(candidate) : value
+      [key]: _.isFunction(value) ? value(candidate, defsKeys) : value
     }, memo), {})
   )
 }
