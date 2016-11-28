@@ -13,7 +13,7 @@ export const createTransform = (definitions) => {
     return Object.assign(
       filterByKeys(defsKeys, candidate),
       _.reduce(mutators, (memo, value, key) => Object.assign({
-        [key]: _.isFunction(value) ? value(candidate, defsKeys) : value
+        [key]: _.isFunction(value) ? value(candidate, definitions) : value
       }, memo), {})
     )
   }
