@@ -30,9 +30,9 @@ export const recursiveValues = ({ type, values }, attr) => {
 }
 
 export const createPropTypes = (definition) => {
-  return recursiveObject(definition, 'type')
+  return selectRecursiveStrategy(definition, 'type')
 }
 
 export const createDefault = (definition) => {
-  return recursiveObject(definition, 'default')
+  return selectRecursiveStrategy(definition, 'default')
 }
