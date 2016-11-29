@@ -199,7 +199,7 @@ Object {
 
 exports[`Suite types should allow isRequired extra prop 7`] = `
 Object {
-  "default": [Function],
+  "default": true,
   "iterable": false,
   "type": [Function],
 }
@@ -207,7 +207,7 @@ Object {
 
 exports[`Suite types should allow isRequired extra prop 8`] = `
 Object {
-  "default": true,
+  "default": false,
   "iterable": false,
   "type": [Function],
 }
@@ -217,7 +217,7 @@ exports[`Suite types should allow isRequired extra prop 9`] = `
 Object {
   "default": false,
   "iterable": false,
-  "type": [Function],
+  "type": undefined,
 }
 `;
 
@@ -225,17 +225,11 @@ exports[`Suite types should allow isRequired extra prop 10`] = `
 Object {
   "default": false,
   "iterable": false,
-  "type": undefined,
-}
-`;
-
-exports[`Suite types should allow isRequired extra prop 11`] = `
-Object {
-  "default": false,
-  "iterable": false,
   "type": [Function],
 }
 `;
+
+exports[`Suite types should allow isRequired extra prop 11`] = `undefined`;
 
 exports[`Suite types should allow isRequired extra prop 12`] = `undefined`;
 
@@ -244,8 +238,6 @@ exports[`Suite types should allow isRequired extra prop 13`] = `undefined`;
 exports[`Suite types should allow isRequired extra prop 14`] = `undefined`;
 
 exports[`Suite types should allow isRequired extra prop 15`] = `undefined`;
-
-exports[`Suite types should allow isRequired extra prop 16`] = `undefined`;
 
 exports[`Suite types should have exist all the defined types 1`] = `
 Object {
@@ -297,7 +289,7 @@ Object {
 
 exports[`Suite types should have exist all the defined types 7`] = `
 Object {
-  "default": [Function],
+  "default": true,
   "iterable": false,
   "type": [Function],
 }
@@ -305,7 +297,7 @@ Object {
 
 exports[`Suite types should have exist all the defined types 8`] = `
 Object {
-  "default": true,
+  "default": false,
   "iterable": false,
   "type": [Function],
 }
@@ -327,13 +319,7 @@ Object {
 }
 `;
 
-exports[`Suite types should have exist all the defined types 11`] = `
-Object {
-  "default": false,
-  "iterable": false,
-  "type": [Function],
-}
-`;
+exports[`Suite types should have exist all the defined types 11`] = `[Function]`;
 
 exports[`Suite types should have exist all the defined types 12`] = `[Function]`;
 
@@ -342,5 +328,3 @@ exports[`Suite types should have exist all the defined types 13`] = `[Function]`
 exports[`Suite types should have exist all the defined types 14`] = `[Function]`;
 
 exports[`Suite types should have exist all the defined types 15`] = `[Function]`;
-
-exports[`Suite types should have exist all the defined types 16`] = `[Function]`;

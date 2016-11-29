@@ -39,7 +39,6 @@ export const types = [
   'number',
   'object',
   'string',
-  'symbol',
   'any',
   'element',
   'instanceOf',
