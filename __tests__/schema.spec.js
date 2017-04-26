@@ -1,5 +1,5 @@
 /* global describe, it, expect */
-import { PropTypes } from 'react'
+import PropTypes from 'prop-types'
 import * as Schemative from '../src/schemative'
 import * as mocks from './mocks'
 

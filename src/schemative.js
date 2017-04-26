@@ -1,4 +1,4 @@
-import { PropTypes } from 'react'
+import PropTypes from 'prop-types'
 import _ from 'lodash/util'
 import { createPropTypes, createDefault } from './parsers'
 import { createTransform } from './transform'
