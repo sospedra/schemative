@@ -11,7 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.2",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "tsil": "^2.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
