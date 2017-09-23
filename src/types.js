@@ -22,13 +22,16 @@ const charge = (value, base, defaultValue) => {
     baseIsRequired: false,
     isRequired: undefined
   })
+  // @FIXME Use defineProperties
+  const target = {}
 
-  return assign({}, charged, {
-    isRequired: assign({}, charged, {
-      baseIsRequired: true,
-      propType: charged.propType.isRequired
+  Object.keys(charged).forEach((property) => {
+    Object.defineProperty(target, property, {
+      get: () => charged[property]
     })
   })
+
+  return target
 }
 
 const createType = (scalar, defaultValue) => {
@@ -36,8 +39,10 @@ const createType = (scalar, defaultValue) => {
   const base = charge(defaultValue, { scalar, propType }, defaultValue)
   const type = (value) => charge(value, base, defaultValue)
 
-  Object.keys(base).forEach((key) => {
-    type[key] = base[key]
+  Object.getOwnPropertyNames(base).forEach((property) => {
+    Object.defineProperty(type, property, {
+      get: () => base[property]
+    })
   })
 
   return type
