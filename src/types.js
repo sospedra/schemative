@@ -1,4 +1,5 @@
 import { assign, noop } from 'lodash'
+import PropTypes from 'prop-types'
 
 const evaluateValueType = (candidate, fallback) => {
   if (typeof candidate !== typeof fallback) {
@@ -23,12 +24,16 @@ const charge = (value, base, defaultValue) => {
   })
 
   return assign({}, charged, {
-    isRequired: assign({}, charged, { baseIsRequired: true })
+    isRequired: assign({}, charged, {
+      baseIsRequired: true,
+      propType: charged.propType.isRequired
+    })
   })
 }
 
 const createType = (scalar, defaultValue) => {
-  const base = charge(defaultValue, { scalar }, defaultValue)
+  const propType = PropTypes[scalar]
+  const base = charge(defaultValue, { scalar, propType }, defaultValue)
   const type = (value) => charge(value, base, defaultValue)
 
   Object.keys(base).forEach((key) => {
