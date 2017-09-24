@@ -1,4 +1,4 @@
-import { assign, noop } from 'lodash'
+import { assign, reduce, noop } from 'lodash'
 import PropTypes from 'prop-types'
 
 const evaluateValueType = (candidate, fallback) => {
@@ -22,16 +22,13 @@ const charge = (value, base, defaultValue) => {
     baseIsRequired: false,
     isRequired: undefined
   })
-  // @FIXME Use defineProperties
-  const target = {}
-
-  Object.keys(charged).forEach((property) => {
-    Object.defineProperty(target, property, {
-      get: () => charged[property]
+  const properties = reduce(charged, (memo, value, property) => {
+    return assign({}, memo, {
+      [property]: { get: () => value }
     })
-  })
+  }, {})
 
-  return target
+  return Object.defineProperties({}, properties)
 }
 
 const createType = (scalar, defaultValue) => {
