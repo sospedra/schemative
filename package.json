@@ -2,7 +2,7 @@
   "name": "schemative",
   "version": "0.0.0-development",
   "description": "Declarative schemas with default values, propTypes, and transformers",
-  "main": "src/schemative.js",
+  "main": "lib/schemative.js",
   "repository": {
     "url": "https://github.com/sospedra/schemative.git",
     "type": "git"
