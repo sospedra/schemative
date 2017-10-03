@@ -16,16 +16,3 @@ export const createSchema = (definition) => {
     transform: createTransform(nodes)
   }
 }
-
-// tsil.deflatten(
-//  tsil.modify(
-//    tsil
-//      .flatten({
-//        a: s.string('e').isRequired
-//      })
-//      .filter(x => {
-//        return x[tsil.VAL] && x[tsil.VAL].baseIsRequired !== undefined
-//      }),
-//     (x) => x.value
-//    )
-//  )
