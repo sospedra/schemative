@@ -1,8 +1,8 @@
 import { assign, reduce, noop } from 'lodash'
 import PropTypes from 'prop-types'
 
-const evaluateValueType = (candidate, fallback) => {
-  if (typeof candidate !== typeof fallback) {
+const evaluateValueType = (candidate, fallback, scalar) => {
+  if (scalar !== 'any' && typeof candidate !== typeof fallback) {
     console.warn(
       'Evalute Schemative type expected',
       typeof fallback, 'but receive', typeof candidate,
@@ -18,17 +18,21 @@ const evaluateValueType = (candidate, fallback) => {
 
 const charge = (value, base, defaultValue) => {
   const charged = assign({}, base, {
-    value: evaluateValueType(value, defaultValue),
     baseIsRequired: false,
     isRequired: undefined
   })
   const properties = reduce(charged, (memo, value, property) => {
+    if (property === 'value') return memo
+
     return assign({}, memo, {
       [property]: { get: () => value }
     })
   }, {})
 
-  return Object.defineProperties({}, properties)
+  console.log(properties)
+  return Object.defineProperties({
+    value: evaluateValueType(value, defaultValue, base.scalar)
+  }, properties)
 }
 
 const createType = (scalar, defaultValue) => {
@@ -37,9 +41,13 @@ const createType = (scalar, defaultValue) => {
   const type = (value) => charge(value, base, defaultValue)
 
   Object.getOwnPropertyNames(base).forEach((property) => {
-    Object.defineProperty(type, property, {
-      get: () => base[property]
-    })
+    if (property !== 'value') {
+      Object.defineProperty(type, property, {
+        get: () => base[property]
+      })
+    } else {
+      type[property] = base[property]
+    }
   })
 
   return type

@@ -7,10 +7,7 @@ import createTransform from './createTransform'
 export * from './types'
 
 export const createSchema = (definition) => {
-  const flat = tsil.flatten(definition)
-  const nodes = flat.filter((node) => {
-    return node[tsil.VAL] && node[tsil.VAL].baseIsRequired !== undefined
-  })
+  const nodes = tsil.flatten(definition)
 
   return {
     __schemative__: true,
