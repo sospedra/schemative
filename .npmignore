@@ -1,4 +1,6 @@
 src
 .babelrc
-yarn.lock
+.codeclimate.yml
+.travis.yml
+__tests__
 examples
