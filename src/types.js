@@ -28,6 +28,31 @@ const evaluateValueType = (candidate, fallback, scalar) => {
   return candidate
 }
 
+const createTypeBase = (base, isRequired) => {
+  const propType = PropTypes[base.scalar]
+
+  return {
+    ...base,
+    __required__: !!isRequired,
+    propType: isRequired ? propType.isRequired : propType,
+    scalar: base.scalar
+  }
+}
+
+const createPrototype = (value, base, defaultValue) => {
+  return assign({}, base, {
+    isRequired: !base.__required__ &&
+      createType(value, createTypeBase(base, true), defaultValue)
+  })
+}
+
+const createProperties = (prototype) => {
+  return reduce(prototype, (memo, value, property) => {
+    if (EXPOSED_PROPERTIES.includes(property)) return memo
+    return assign({}, memo, {[property]: { value }})
+  }, {})
+}
+
 /**
  * Given a value, type base and default value creates an Schemative type.
  * Create the object with the type definition.
@@ -42,47 +67,21 @@ const evaluateValueType = (candidate, fallback, scalar) => {
  * @return {Object}           - Type
  */
 const createType = (value, base, defaultValue) => {
-  const type = assign({}, base, {
-    isRequired: !base.__required__ &&
-      createType(value, createTypeBase(base, true), defaultValue)
-  })
-  const properties = reduce(type, (memo, value, property) => {
-    if (EXPOSED_PROPERTIES.includes(property)) return memo
+  const prototype = createPrototype(value, base, defaultValue)
+  const properties = createProperties(prototype)
+  const Type = function () {}
 
-    return assign({}, memo, {
-      [property]: { get: () => value }
-    })
-  }, {})
+  Type.value = evaluateValueType(value, defaultValue, prototype.scalar)
 
-  return Object.defineProperties({
-    value: evaluateValueType(value, defaultValue, base.scalar)
-  }, properties)
-}
-
-const createTypeBase = (base, isRequired) => {
-  const propType = PropTypes[base.scalar]
-
-  return {
-    ...base,
-    __required__: !!isRequired,
-    propType: isRequired ? propType.isRequired : propType,
-    scalar: base.scalar
-  }
+  return Object.defineProperties(Type, properties)
 }
 
 const createTypeWithDefault = (scalar, defaultValue) => {
   const base = createType(defaultValue, createTypeBase({ scalar }), defaultValue)
-  const type = (value) => createType(value, base, defaultValue)
+  const type = function (value) { return createType(value, base, defaultValue) }
 
-  Object.getOwnPropertyNames(base).forEach((property) => {
-    if (EXPOSED_PROPERTIES.includes(property)) {
-      type[property] = base[property]
-    } else {
-      Object.defineProperty(type, property, {
-        get: () => base[property]
-      })
-    }
-  })
+  Object.setPrototypeOf(type, base)
+  type.value = base.value
 
   return type
 }

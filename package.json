@@ -18,7 +18,7 @@
     "babel-cli": "^6.18.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-3": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "codeclimate-test-reporter": "^0.4.0",
     "jest": "^17.0.3",
     "react": "^15.5.4",

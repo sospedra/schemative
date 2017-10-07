@@ -19,8 +19,8 @@ const complex = S.createSchema({
   store: S.shape({
     name: S.string('Fruitomatic'),
     isOpen: S.bool
-  })
+  }),
+  control: S.bool
 })
 
 console.log(complex.Default)
-
